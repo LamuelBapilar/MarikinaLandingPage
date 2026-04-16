@@ -41,14 +41,20 @@ MarikinaLandingPage/
 │── Image/            # images and resources folder
 │── Js/               # JavaScript folder
 │   └── main.js       # simple javascript for the landing page
+```
 
 ⚙️ Features
 
 📍 Landing page design (single-page layout)
+
 🖼️ Hero section
+
 📱 Responsive design (Carousel)
+
 🧭 Navigation within the page (scroll or anchors)
+
 🎨 Styled UI using CSS
+
 🔐 Login and Registration Modal
 
 
