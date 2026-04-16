@@ -43,7 +43,7 @@ MarikinaLandingPage/
 │   └── main.js       # simple javascript for the landing page
 ```
 
-⚙️ Features
+## ⚙️ Features
 
 📍 Landing page design (single-page layout)
 
@@ -58,7 +58,7 @@ MarikinaLandingPage/
 🔐 Login and Registration Modal
 
 
-🚀 How to Run the Project
+## 🚀 How to Run the Project
 
 1. Clone the repository: git clone https://github.com/LamuelBapilar/MarikinaLandingPage.git
 2. Open the project in VS Code
