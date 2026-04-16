@@ -9,7 +9,8 @@ The Marikina Landing Page is a static website that presents information about th
 
 The project focuses on clean layout, basic navigation, and visual presentation of the city.
 
-this is the link for the Website: https://lamuelbapilar.github.io/MarikinaLandingPage/
+Website Link: https://lamuelbapilar.github.io/MarikinaLandingPage/
+
 ---
 
 ## 🎯 Objectives
