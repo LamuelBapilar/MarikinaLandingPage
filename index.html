@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="CSS/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- Header and Logos -->
+  <header class="header">
+    <img src="Image/logo.png" alt="logo" class="logo">
+    <div class="logo-title">
+      <h1>Marikina City Gov.</h1>
+      <p>Your gateway to government services</p>
+    </div>
+    <div class="search-bar">
+      <input type="search" placeholder="Search...">
+      <button>Login</button>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-item">
+      <a class="navbar-item-a-first" href="#home">Home</a>
+    </div>
+    <div class="navbar-item dropdown">
+      <a class="navbar-item-a" href="#">Services</a>
+      <div class="dropdown-content">
+        <a onclick="showLinksPopup()">Forms</a>
+        <a id="post-button">Appointment</a>
+      </div>
+    </div>
+    <div class="navbar-item">
+      <a class="navbar-item-a" href="#news">News Reports</a>
+    </div>
+    <div class="navbar-item">
+      <a class="navbar-item-a" href="#projects">Projects</a>
+    </div>
+    <div class="navbar-item">
+      <a class="navbar-item-a" href="#about">About Us</a>
+    </div>
+    <div class="navbar-item">
+      <a class="navbar-item-a" href="#contactus">Contact Us</a>
+    </div>
+  </div>
+
+   <!-- pop up -->
+
+   <!-- Login Popup Form -->
+<div id="login-popup" class="popup-form">
+  <div class="form-content">
+    <span class="close-btn" id="close-login-popup">&times;</span>
+    <h2>Login</h2>
+    <form>
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required />
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+      
+      <p>Don't have an account? <a href="#" class="register-link">Register here</a></p>
+    </form>
+  </div>
+</div>
+
+<!-- Register Popup Form -->
+<div id="register-popup" class="popup-form">
+  <div class="form-content">
+    <span class="close-btn" id="close-register-popup">&times;</span>
+    <h2>Registration Form</h2>
+    <div class="scrollable-form">
+    <form id="register-form">
+      <div class="form-group">
+        <label for="first-name">First Name <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="first-name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="middle-name">Middle Name</label>
+        <input type="text" class="form-control" id="middle-name">
+    </div>
+    
+    <div class="form-group">
+        <label for="last-name">Last Name <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="last-name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="suffix">Suffix</label>
+        <input type="text" class="form-control" id="suffix">
+    </div>
+    
+    <div class="form-group">
+        <label for="birthday">Birthday <span class="text-danger">*</span></label>
+        <input type="date" class="form-control" id="birthday" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="phone-number">Phone Number <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="phone-number" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email Address <span class="text-danger">*</span></label>
+        <input type="email" class="form-control" id="email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="password">Password <span class="text-danger">*</span></label>
+        <input type="password" class="form-control" id="password" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="street">Street <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="street" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="region">Region <span class="text-danger">*</span></label>
+        <select class="form-control" id="region" onchange="loadProvinces()" required>
+            <option value="" disabled selected>Select Region</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="province">Province <span class="text-danger">*</span></label>
+        <select class="form-control" id="province" onchange="loadCities()" required>
+            <option value="" disabled selected>Select Province</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="city">City <span class="text-danger">*</span></label>
+        <select class="form-control" id="city" onchange="loadBarangays()" required>
+            <option value="" disabled selected>Select City</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="barangay">Barangay</label>
+        <select class="form-control" id="barangay">
+            <option value="" disabled selected>Select Barangay</option>
+        </select>
+    </div>
+    
+    
+    <button type="submit" class="btn btn-primary">Register</button>
+    
+    </form>
+  </div>
+  </div>
+</div>
+
+
+   <!-- Popup Form for Appointment -->
+<div id="appointment-popup" class="popup-form">
+  <div class="form-content">
+    <span class="close-btn" id="close-popup">&times;</span>
+    <h2>Appointment Form</h2>
+    <form>
+      <div class="form-group">
+        <label for="purpose">Purpose of Appointment:</label>
+        <select id="purpose" name="purpose" class="form-control" required>
+          <option value="">Select Purpose</option>
+          <option value="Business Renewal">Business Renewal</option>
+          <option value="Work Permit">Work Permit</option>
+          <option value="Clinic Consultation">Clinic Consultation</option>
+          <option value="Certifications">Certifications</option>
+          <option value="Retirement">Retirement</option>
+          <option value="Special Permits">Special Permits</option>
+          
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Reliable Contact Number:</label>
+        <input type="tel" id="contact" name="contact" class="form-control" placeholder="Enter your contact number" required />
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date of Appointment:</label>
+        <input type="date" id="date" name="date" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="time">Time of Appointment:</label>
+        <input type="time" id="time" name="time" class="form-control" required />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- Form Pop-Ups -->
+<div class="popup-form" id="popupForm">
+  <div class="popup-content">
+      <button class="close-btn" onclick="closePopup()">&times;</button>
+      <h2>Form Library</h2>
+      <div id="linksContainer">
+          <!-- Dynamic link buttons will be inserted here -->
+      </div>
+  </div>
+</div>
+
+
+  <!-- Home -->
+  <div id="home" class="home">
+    <div class="carousel-images">
+      <img src="/Image/tax-exemption.jpg" alt="homepic1" class="home-pic">
+      <img src="Image/shoe.jpg" alt="homepic2" class="home-pic">
+      <img src="/Image/tourist-spot.jpg" alt="homepic3" class="home-pic">
+    </div>
+
+    <button class="carousel-arrow left-arrow">&#10094;</button>
+    <button class="carousel-arrow right-arrow">&#10095;</button>
+
+    <div class="carousel-indicators">
+      <span class="indicator active" data-slide="0"></span>
+      <span class="indicator" data-slide="1"></span>
+      <span class="indicator" data-slide="2"></span>
+    </div>
+  </div>
+
+  <!-- Reports -->
+  <div class="report">
+
+    <div class="left" id="news">
+      <div class="report-bottom-lining">
+        <p>News and Updates
+        <p>
+      </div>
+      <div class="left-newsbox">
+        <img src="Image/street-light.jpg" alt="streetlight" class="left-newsbox-image">
+        <div class="left-newsbox-content">
+          <h3>Marikina’s barangay IVC launches ‘low ng Pag-asa’ program</h3>
+          <h5>Posted on November 15, 2024</h5>
+        </div>
+      </div>
+      <div class="left-newsbox">
+        <img src="Image/poster-marikina.jpg" alt="poster" class="left-newsbox-image">
+        <div class="left-newsbox-content">
+          <h3>Marikina river dredging project aims to reduce flooding</h3>
+          <h5>Posted on November 15, 2024</h5>
+        </div>
+      </div>
+      <a href="https://www.youtube.com/@marikinapio6838" target="_blank">
+        <button>More News</button>
+      </a>
+    </div>
+
+    <div class="right" id="projects">
+      <div class="report-bottom-lining">
+        <p>Goverment Projects</p>
+      </div>
+      <div class="carousel-container" id="project-carousel">
+        <div class="carousel-wrapper">
+          <div class="carousel-slide">
+            <img src="Image/csc-exam.jpg" alt="CSC Project" class="carousel-image">
+          </div>
+          <div class="carousel-slide">
+            <img src="Image/shoe.jpg" alt="shoe" class="carousel-image">
+          </div>
+          <div class="carousel-slide">
+            <img src="Image/tree-planting.jpg" alt="tree" class="carousel-image">
+          </div>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
+      <a href="https://www.facebook.com/MarikinaPIO?locale=eo_EO" target="_blank">
+        <button>Dive In</button>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- About us-->
+  <div class="about" id="about">
+    <div class="about-title">
+      <h3>MARIKINA'S PUBLIC SERVANTS</h3>
+    </div>
+    <div class="primarydiv">
+      <div class="mayordiv margin-r">
+        <div class="about-overlay-mayor"></div>
+        <img src="Image/mayor.png" alt="mayor" class="about-img">
+        <div class="about-content">
+          <h3>Hon. Marcelino R. Teodoro</h3>
+          <p>City Mayor</p>
+        </div>
+      </div>
+      <div class="mayordiv">
+        <div class="about-overlay-mayor"></div>
+        <img src="Image/vice mayor.png" alt="vmayor" class="about-img">
+        <div class="about-content">
+          <h3>Hon. Marion S. Andres</h3>
+          <p>City Vice Mayor</p>
+        </div>
+      </div>
+    </div>
+    <div class="blueline">
+      <p class="bluebar">District 1 Councilors</p>
+    </div>
+    <div class="secondarydiv">
+      <div class="districtdiv ">
+        <div class="about-overlay"></div>
+        <img src="Image/d1-1.png" alt="d1-1" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Samuel S. Ferriol</h4>
+        </div>
+      </div>
+      <div class="districtdiv ">
+        <div class="about-overlay"></div>
+        <img src="Image/d1-2.png" alt="d1-2" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Romina Kate N. De Guzman</h4>
+
+        </div>
+      </div>
+      <div class="districtdiv ">
+        <div class="about-overlay"></div>
+        <img src="Image/d1-3.png" alt="d1-3" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Carl Eli F. Afica</h4>
+
+        </div>
+      </div>
+      <div class="districtdiv ">
+        <div class="about-overlay"></div>
+        <img src="Image/d1-4.png" alt="d1-4" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Rommel S. Acuña</h4>
+
+        </div>
+      </div>
+      <div class="districtdiv ">
+        <div class="about-overlay"></div>
+        <img src="Image/d1-5.png" alt="d1-5" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Manuel E. Sarmiento</h4>
+        </div>
+      </div>
+    </div>
+    <div class="thirddiv">
+      <div class="districtdiv margin-R">
+        <div class="about-overlay"></div>
+        <img src="Image/d1-6.png" alt="d1-6" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Serafin Y. Bernardino</h4>
+
+        </div>
+      </div>
+      <div class="districtdiv margin-R">
+        <div class="about-overlay"></div>
+        <img src="Image/d1-7.png" alt="d1-7" class="about-img">
+        <div class="about-content">
+          <h4>Cloyd S. Casimiro</h4>
+
+        </div>
+      </div>
+      <div class="districtdiv margin-R">
+        <div class="about-overlay"></div>
+        <img src="Image/d1-8.png" alt="d1-8" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Jojo B. Banzon</h4>
+        </div>
+      </div>
+    </div>
+    <div class="blueline">
+      <p class="bluebar">District 2 Councilors</p>
+    </div>
+    <div class="secondarydiv">
+      <div class="districtdiv ">
+        <div class="about-overlay"></div>
+        <img src="Image/d2-1.png" alt="d2-1" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Donn Carlo B. Favis</h4>
+        </div>
+      </div>
+      <div class="districtdiv ">
+        <div class="about-overlay"></div>
+        <img src="Image/d2-2.png" alt="d2-2" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Angelito R. Nuñez</h4>
+
+        </div>
+      </div>
+      <div class="districtdiv ">
+        <div class="about-overlay"></div>
+        <img src="Image/d2-3.png" alt="d2-3" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Loreto F. Tolentino Jr.</h4>
+
+        </div>
+      </div>
+      <div class="districtdiv ">
+        <div class="about-overlay"></div>
+        <img src="Image/d2-4.png" alt="d2-4" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Ronnie S. Acuña</h4>
+
+        </div>
+      </div>
+      <div class="districtdiv ">
+        <div class="about-overlay"></div>
+        <img src="Image/d2-5.png" alt="d2-5" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Levy dL. de Guzman</h4>
+        </div>
+      </div>
+    </div>
+    <div class="thirddiv">
+      <div class="districtdiv margin-R">
+        <div class="about-overlay"></div>
+        <img src="Image/d2-6.png" alt="d2-6" class="about-img">
+
+        <div class="about-content">
+          <h4>Hon. Serafin Y. Bernardino</h4>
+
+        </div>
+      </div>
+      <div class="districtdiv margin-R">
+        <div class="about-overlay"></div>
+        <img src="Image/d2-7.png" alt="d2-7" class="about-img">
+        <div class="about-content">
+          <h4>Marife Dayao</h4>
+
+        </div>
+      </div>
+      <div class="districtdiv margin-R">
+        <div class="about-overlay"></div>
+        <img src="Image/d2-8.png" alt="d2-8" class="about-img">
+        <div class="about-content">
+          <h4>Hon. Hilario Punzalan</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact us-->
+  <div class="contact" id="contactus">
+    <img class="background-img" src="/Image/lrt.jpg" alt="lrt">
+    <div class="background-overlay">
+      <div class="description">
+        <h2>PEOPLE’S CORNER</h2>
+        <h3>Be involved, Be heard!</h3>
+        <p>Help the city improve its services by providing us with your feedback.</p>
+        <p>All data obtained will be confidential.</p>
+        <ul>
+          <li>Report erring private establishments or businesses</li>
+          <li>Report irregular government activities or delayed services</li>
+          <li>Request for public records and documents</li>
+        </ul>
+        <div class="contact-container">
+          <div class="contact-container-left">
+            <p>Email</p>
+          </div>
+          <div class="contact-container-right">
+            <a href="mailto:web@marikina.gov.ph">web@marikina.gov.ph</a>
+          </div>
+        </div>
+        <div class="contact-container">
+          <div class="contact-container-left">
+            <p>Hotline</p>
+          </div>
+          <div class="contact-container-right">
+            <p>8646-0306 and 8646-0462
+            <p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer-->
+      <footer class="footer">
+        <div class="footer-left">
+          <p>Copyright © Marikina City 2023. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+          <a href="https://www.facebook.com/MarikinaCityPIO" class="social-icon"><i
+              class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://x.com/marikinapio" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.youtube.com/@marikinapio6838" class="social-icon"><i
+              class="fa-brands fa-youtube"></i></a>
+        </div>
+      </footer>
+
+
+
+
+      <script src="Js/main.js"></script>
+</body>
+
+</html>

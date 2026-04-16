@@ -1,0 +1,1154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #E9F6FF;
+    scroll-behavior: smooth;
+}
+
+
+/*Header and Logos*/
+.header{
+    display: flex;
+    margin: 0 auto; 
+    width: 85%; 
+    
+}
+
+.logo{
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    width: 5.5%;
+    height: 5.5%;
+    }
+
+.logo-title{
+    font-family: 'Poppins', sans-serif;
+    display: column;
+    margin-left: 1%;
+    margin-top: 1.6%;
+    width: 30%;
+
+
+}
+
+.logo-title h1{
+    color: #0B4E77;
+    font-size: 1.4vw;
+    margin-bottom: 0;
+   
+   
+}
+
+.logo-title p{
+    margin: 0;
+    font-size: 0.8vw;
+}
+
+.search-bar{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 39%;
+}
+
+.search-bar input{
+    width: 15vw;
+    height: 2vw;
+    background-color: #E9F6FF;
+    border: black 0.1vw solid;
+    margin-top: 11.5%;
+    border-radius: 5vw;
+    padding-left: 3vw; 
+    font-size: 1.1vw;
+    background: url('Image/search.png') no-repeat 1vw center ; 
+    background-size: 1.5vw 1.5vw;
+    line-height: 2.5vw; 
+}
+
+.search-bar ::placeholder {
+    color:  #80B4D4;
+  }
+
+.search-bar button{
+    font-family: 'Poppins', sans-serif;
+    width:5vw;
+    height:2vw;
+    background-color: #E9F6FF;
+    border: black 0.1vw solid;
+    border-radius: 5vw ;
+    font-size: 1.1vw;
+    transition: all 0.5s ease;
+}
+
+.search-bar button:hover{
+    background-color: #0B4E77;
+    color: #E9F6FF;
+    font-size: 1.1vw;
+    transition: all 0.5s ease;
+}
+
+.search-bar button:active{
+    background-color: #80B4D4;
+    color: #E9F6FF;
+    font-size: 1.1vw;
+    transition: all 0.1s ease;
+}
+
+/*Navbar*/
+
+  .navbar {
+    display: flex;
+    background-color: #0B4E77; 
+    padding: 1.4vw 0; 
+  }
+  
+  .navbar-item {
+    margin: 0 2vw; 
+  }
+
+  .navbar-item-a-first {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1vw; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    transition: color 0.3s ease;
+    margin-left: 12.2vh;
+  }
+
+  .navbar-item-a-first:hover {
+    color: #060707; 
+  }
+  
+  .navbar-item-a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1vw; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-item-a:hover {
+    color: #060707; 
+  }
+  
+  .dropdown {
+    position: relative; 
+  }
+  
+  .dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: #E9F6FF;
+    min-width: 8vw; 
+    z-index: 1;
+    top: 100%; 
+    left: 0;
+    border-radius: 0.5vw; 
+  }
+  
+  .dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 0.5vw 1vw; 
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+    font-size: 1vw; 
+    border-bottom: rgb(187, 187, 187) 0.2vh solid;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #80B4D4; 
+  }
+  
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Responsive Design for Navbar (For mobile phones) */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column; 
+    }
+  
+    .navbar-item-a-first{
+        margin: 1vw 0; 
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 2vw; 
+    }
+
+    .navbar-item {
+      margin: 1vw 0; 
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .navbar-item-a {
+      font-size: 2vw; 
+
+    }
+  
+    .dropdown-content {
+      min-width: 10vw; 
+    }
+  }
+  
+
+/* Home*/ 
+
+.home {
+    width: 85%;
+    height: 80vh;
+    margin: 2.5% auto;
+    overflow: hidden;
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+    position: relative;
+  }
+  
+  /* Flex container for images */
+  .carousel-images {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    width: 100%; /* Adjust for the number of images */
+    height: 100%;
+  }
+  
+  /* Individual images */
+  .home-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  /* Navigation Arrows */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .left-arrow {
+    left: 1vw;
+  }
+  
+  .right-arrow {
+    right: 1vw;
+  }
+  
+  .carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Indicators */
+  .carousel-indicators {
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1vw;
+  }
+  
+  .indicator {
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .indicator.active {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
+  
+  /* Reports*/ 
+
+  .report {
+    display: flex;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .report-bottom-lining{
+    border-bottom: 0.4vh solid #0B4E77;
+    margin-bottom: 4vh;
+  }
+
+  .report button{
+    position: absolute;
+     font-family: 'Poppins', sans-serif;
+    width:8vw;
+    height:2.5vw;
+    background-color: #E9F6FF;
+    border: #0B4E77 0.2vw solid;
+    font-size: 1.1vw;
+    transition: all 0.5s ease;
+    color: #0B4E77;
+    right: 0;
+  }
+
+  .report button:hover{
+    background-color: #0B4E77;
+    color: #E9F6FF;
+    font-size: 1.1vw;
+    transition: all 0.5s ease;
+}
+
+.report button:active{
+    background-color: #80B4D4;
+    color: #E9F6FF;
+    font-size: 1.1vw;
+    transition: all 0.1s ease;
+}
+
+  .left {
+    width: 41%;
+    height: 105vh;
+    padding-top: 0;
+    margin-right: 7%;
+    margin-bottom: 4vh;
+    position: relative;
+  }
+
+  .left p{
+    text-decoration: none;
+    background-color: #0B4E77;
+    color: white;
+    font-size: 1.2vw; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    transition: color 0.3s ease;
+    margin: 0;
+    padding-top: 0.8vh;
+    padding-bottom: 0.3vh;
+    padding-left: 2vh;
+    width: 35%;
+  }
+
+  .left-newsbox {
+    position: relative; /* Position context for overlay */
+    width: 90%;
+    height: 40vh;
+    overflow: hidden;
+    border-radius: 2vh;
+    margin-bottom: 4vh;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Optional animation */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.left-newsbox:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+/* Optional: Darken overlay */
+.left-newsbox::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0); /* Transparent initially */
+    transition: background 0.3s ease; /* Smooth darkening */
+}
+
+.left-newsbox:hover::after {
+    background: rgba(0, 0, 0, 0.2); /* Add dark overlay on hover */
+}
+
+.left-newsbox-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.left-newsbox-content{
+  position: absolute; 
+  display: column;
+  bottom: 0; 
+  width: 100%; 
+  background: white
+}
+
+.left-newsbox-content h3{
+color: #060707;
+font-size: 1vw;
+margin-left: 1.1vw;
+margin-top: 0.5vw;
+margin-bottom: 0.2vw;
+
+}
+
+.left-newsbox-content h5{
+  color: #060707;
+  font-size: 0.9vw;
+  margin-left: 1.2vw;
+  font-weight: 100;
+  margin-top: 0;
+  margin-bottom: 0.8vw;
+  }
+
+  .right {
+    width: 52%;
+    height: 105vh;
+    position: relative;
+  }
+
+ 
+
+  .right p{
+    text-decoration: none;
+    background-color: #0B4E77;
+    color: white;
+    font-size: 1.2vw; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    transition: color 0.3s ease;
+    margin: 0;
+    padding-top: 0.8vh;
+    padding-bottom: 0.3vh;
+    padding-left: 2vh;
+    width: 29%;
+  }
+
+  .right-projectbox {
+    width: 95%;
+    height: 84vh;
+    overflow: hidden;
+    border-radius:2vh;
+    background-color: white;
+    margin-bottom: 4vh;
+  }
+
+  .right-projectbox-image{
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    display: block; 
+  }
+
+  
+/* Carousel Main Container */
+.carousel-container {
+  position: relative;
+  width: 95%;
+  height: 84vh;
+  overflow: hidden;
+  border-radius: 2vh;
+  margin-bottom: 4vh;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel Wrapper for Slides */
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+/* Each Slide */
+.carousel-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Images */
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Navigation Buttons */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.carousel-nav.prev-btn {
+  left: 1rem;
+}
+
+.carousel-nav.next-btn {
+  right: 1rem;
+}
+
+.carousel-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-dots div {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-dots .dot-active {
+  background: #0B4E77;
+}
+
+/*About Us */
+
+.about{
+  display: column;            
+  justify-content: center;     /* Center content horizontally */
+  width: 85%;
+  height: 91vw;
+  margin-top: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bluebar{
+  color: #E9F6FF;
+  background-color: #0B4E77;
+  margin: 1.2vw 0 0 0;
+  font-size: 1.2vw; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  padding-top: 0.8vh;
+  padding-bottom: 0.3vh;
+  padding-left: 2vh;
+  width: 14.5%;
+}
+
+.blueline{
+  border-bottom: 0.4vh solid #0B4E77;
+  margin: 0 0 0 0;
+  padding: 0;
+}
+
+.margin-r{
+  margin-right: 2%;
+}
+
+.margin-R{
+  margin-left: 1.2%;
+  margin-right: 1.2%;
+}
+
+.about-img{
+  width: 100%;                 
+  height: 100%;               
+  object-fit:inherit;  
+  border-radius: 1.5vh;       
+}
+
+.about-overlay-mayor {
+  position: absolute; /* Overlay positioned absolutely over the image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12.7vw;
+  border-top-left-radius: 1.5vh;
+  border-top-right-radius: 1.5vh;
+  background-color: rgba(78, 170, 228, 0.2);
+  transition: background-color 0.3s ease;
+  z-index: 1; /* Makes sure the overlay is above the image */
+}
+
+.about-overlay-mayor:hover {
+  background-color: rgba(78, 170, 228, 0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.about-overlay {
+  position: absolute; /* Overlay positioned absolutely over the image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10.9vw;
+  border-top-left-radius: 1.5vh;
+  border-top-right-radius: 1.5vh;
+  background-color: rgba(78, 170, 228, 0.2);
+  transition: background-color 0.3s ease;
+  z-index: 1; /* Makes sure the overlay is above the image */
+}
+
+.about-overlay:hover {
+  background-color: rgba(78, 170, 228, 0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+
+.about-content{
+  position: absolute; 
+  display: column;
+  bottom: 0; 
+  width: 100%;
+  height: 3.2vw; 
+  background: white;
+  border-bottom-left-radius: 1.5vh;  
+  border-bottom-right-radius: 1.5vh;  
+}
+
+.about-content h4{
+  color: #060707;
+  font-size: 1vw;
+  margin: 0.5vw auto 0 auto;
+  padding: 0;
+  justify-content: center; /* Center horizontally */
+  align-items: center;    /* Center vertically */
+  text-align: center;
+}
+
+.about-content h3{
+  color: #060707;
+  font-size: 1vw;
+  margin: 0 0 0 0.4vw;
+  padding: 0;
+}
+
+.about-content p{
+  color: #060707;
+  font-size: 0.8vw;
+  font-weight: 100;
+  margin: 0 0 0 0.4vw;
+  
+}
+
+
+.about-title {
+  font-size: 1.4vw;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #0B4E77;
+  display: flex;            
+  justify-content: center;    
+  align-items: center;         
+  text-align: center;    
+}
+
+.about-title h3 {
+  margin: 0;               
+}
+
+.primarydiv {
+  position: relative;
+  display: flex;               
+  justify-content: center;     
+  align-items: center;         
+  height: 16vw;
+  margin-top: 1vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Poppins', sans-serif;
+
+
+  
+}
+
+.secondarydiv {
+  position: relative;
+  display: flex;   
+  justify-content: space-between;     
+  align-items: center;         
+  margin-top: 1.3vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+.thirddiv {
+  position: relative;
+  display: flex;   
+  justify-content: center;     
+  align-items: center;         
+  height: 14vw;
+  margin-top: 1.3vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+.mayordiv {
+  position: relative;
+  width: 18%;
+  height: 16vw;
+  border-radius: 1.5vh;
+  box-shadow: 
+  -5px 5px 10px rgba(0, 0, 0, 0.2),   /* Bottom-left shadow */
+  5px 5px 10px rgba(0, 0, 0, 0.2);    /* Bottom-right shadow */
+}
+
+.districtdiv {
+  position: relative;
+  width: 18%;
+  height: 14vw;
+  margin-top: 0;
+  border-radius: 1.5vh;
+  box-shadow: 
+  -5px 5px 10px rgba(0, 0, 0, 0.2),   /* Bottom-left shadow */
+  5px 5px 10px rgba(0, 0, 0, 0.2);    /* Bottom-right shadow */
+}
+
+/* Contact Us */
+.contact {
+  width: 100%;
+  position: relative;
+}
+
+.background-img {
+  width: 100%;
+  height: 40vw;
+  object-fit: cover;
+  display: block; /* Ensures the image is displayed properly */
+}
+
+.background-overlay {
+  position: absolute; /* Overlay positioned absolutely over the image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vw;
+  background-color: rgba(11, 78, 119, 0.6); /* Blue color with 60% opacity */
+  z-index: 1; /* Makes sure the overlay is above the image */
+}
+
+.description{
+  margin: 10vh 15vh 10vh 15vh;
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  display: column;
+  width: 50%;
+  height: 32vw;
+  color: white;
+}
+
+.description h2{
+font-size: 3.2vw;
+font-weight: 1100;
+margin: 0;
+padding: 0;
+}
+
+.description h3{
+  margin: 1vw 0 1.7vw 0;
+  font-size: 1.8vw;
+  font-weight: 1200;
+  padding: 0;
+}
+
+.description p{
+  font-size: 1.2vw; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+
+.description li{
+  font-size: 1.2vw; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-container {
+  display: flex;
+  margin-top: 2.7vw;
+  height: 4vw;
+  width: 54%;
+  background-color: #E9F6FF;
+  border-radius: 1.5vh;
+  overflow: hidden; /* Ensure border radius applies cleanly */
+}
+
+.contact-container-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+  background-color: #80B4D4;
+  color: #E9F6FF;
+  font-size: 1.2vw;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+.contact-container-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+  background-color: #E9F6FF;
+  font-size: 1.2vw;
+  font-family: 'Poppins', sans-serif;
+  color: #060707;
+}
+
+.contact-container-right a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from the parent */
+  font-weight: 500; /* Adjust weight for a cleaner look */
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E9F6FF;
+  padding-left: 3vw;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2vw;
+}
+
+.footer-left {
+  color: #060707;
+  width: 40%;
+}
+
+.footer-left p {
+  margin-left: 10%;
+}
+
+
+.footer-right {
+  display: flex;
+  gap: 2vw;
+  margin-right: 7vw;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4vw;
+  height: 4vw;
+  color: #0B4E77;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 2.4vw;
+  transition: background-color 0.3s ease;
+  margin-top: 0;
+}
+
+.social-icon:hover {
+  background-color: #80B4D4;
+}
+
+/* Pop-up form for appoinment */
+/* General Styles for Popup Forms */
+.popup-form {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);  /* Slightly darker overlay */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transition: opacity 0.3s ease; /* Smooth fade-in effect */
+}
+
+/* Content inside the pop-up */
+.form-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;  /* Rounded corners */
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Subtle shadow effect */
+  text-align: center;  /* Center text inside form */
+  transform: scale(0.9);  /* Initial scaling effect */
+  animation: popup-animation 0.3s forwards;  /* Animation on open */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Start alignment for form */
+  max-height: 90vh;  /* Limit the height of the form container */
+  overflow: hidden;
+}
+
+/* Scrollable form container */
+.scrollable-form {
+  width: 100%;
+  max-height: 70vh;  /* Ensure content is scrollable within this limit */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  margin-bottom: 20px;
+}
+
+@keyframes popup-animation {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.form-content h2 {
+  color: #0B4E77;  /* Primary color for headings */
+  font-size: 1.8em;
+  font-family: 'Arial', sans-serif;
+  margin: 0 0 20px 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%; /* Ensure form groups take up full width for proper centering */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group label {
+  font-size: 1.1em;
+  color: #0B4E77;  /* Primary color for labels */
+  margin-bottom: 5px;
+}
+
+.form-group select, .form-group input {
+  width: 80%;  /* Adjusted width for shorter input fields */
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.form-group select:focus, .form-group input:focus {
+  border-color: #0B4E77;  /* Primary color on focus */
+  outline: none;
+}
+
+.btn {
+  background-color: #0B4E77;  /* Primary color button */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  width: 80%;  /* Adjusted width for shorter button */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px; /* Space above button */
+}
+
+.btn:hover {
+  background-color: #80B4D4;  /* Secondary color on hover */
+  transform: translateY(-2px);  /* Slight lift effect */
+}
+
+/* Close Button */
+.close-btn {
+  font-size: 30px;
+  color: #0B4E77;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #80B4D4;  /* Secondary color for close button on hover */
+}
+
+/* Initially hide the pop-up forms */
+#appointment-popup, #login-popup, #register-popup {
+  display: none;  /* Ensures pop-ups are hidden by default */
+}
+
+
+
+/* CSS for Dropdown and Popup Form */
+
+/* Popup container styling */
+.popup-form {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: popup-animation 0.3s forwards;
+}
+
+/* Popup content styling */
+.popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px; /* Rounded corners */
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  text-align: center;
+  transform: scale(0.9); /* Initial scaling effect */
+  animation: popup-animation 0.3s forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Start alignment for form */
+  max-height: 90vh; /* Limit the height of the form container */
+  overflow: hidden;
+}
+
+/* Animation for pop-up opening */
+@keyframes popup-animation {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Title of the popup */
+.popup-content h2 {
+  color: #0B4E77; /* Primary color for headings */
+  font-size: 1.8em;
+  font-family: 'Arial', sans-serif;
+  margin: 0 0 20px 0;
+}
+
+/* Scrollable container for links */
+#linksContainer {
+  width: 100%;
+  overflow-y: auto;
+  max-height: 60vh; /* Ensure scrolling if content exceeds */
+  margin-bottom: 10px;
+}
+
+/* Styling for link buttons inside the popup */
+.popup-content .link-button {
+  background-color: #0B4E77; /* Same primary color for the buttons */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  width: 100%; /* Full width for the buttons */
+  margin: 10px 0;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-sizing: border-box;
+}
+
+/* Button hover effect */
+.popup-content .link-button:hover {
+  background-color: #80B4D4; /* Lighter color on hover */
+  transform: translateY(-2px); /* Button hover effect */
+}
+
+/* Active button effect */
+.popup-content .link-button:active {
+  transform: translateY(2px); /* Slightly pressed effect */
+}
+
+/* Close button styling */
+.close-btn {
+  font-size: 30px;
+  color: #0B4E77;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Close button hover effect */
+.close-btn:hover {
+  color: #80B4D4; /* Secondary color for close button on hover */
+}
+
+/* Dropdown styling for category selection */
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group label {
+  font-size: 1.1em;
+  color: #0B4E77; /* Primary color for labels */
+  margin-bottom: 5px;
+}
+
+.form-group select {
+  width: 80%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Focused dropdown styling */
+.form-group select:focus {
+  border-color: #0B4E77;
+  outline: none;
+}
